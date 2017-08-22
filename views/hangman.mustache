@@ -1,0 +1,19 @@
+<center><form action='/hangman' method=='post'>
+<input type="text" maxlength="1"  name='hangman' value='' placeholder="Guess A Letter.""">
+      </input>
+  <button type='submit' name='button'>Guess!</button>
+</form></center>
+
+<span style='font-size: 2em; letter-spacing: 10px;'>{{word}}</span>
+
+<div id='wrong'>
+  <br>
+  <br>
+  You've guessed :
+  {{#wrong}}
+  '{{.}}'
+  {{/wrong}} , you now have{{req.session.guesses}} guesses left!
+</div>
+{{#wordArray}}
+{{.}}
+{{/wordArray}}
